@@ -17,7 +17,7 @@
             </div>
             <div class="pt-3 fs-5 fw-bold">{{$user->profile->title}}</div>
             <div class="pt-3 fs-5">{{$user->profile->bio}}</div>
-            <div class="pt-3 fs-5"><a href="#">{{$user->profile->url}}</a> </div>
+            <div class="pt-3 fs-5"><a href="#">{{$user->profile->url ?? 'N/A'}}</a> </div>
         </div>
     </div>
 
