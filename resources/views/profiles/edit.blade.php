@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container">
-    <!--{{$user->id}}-->
-
     <form action="/profile/{{$user->id}}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PATCH')
@@ -44,6 +42,19 @@
             <textarea aria-label="With textarea" id="bio" class="form-control @error('bio') is-invalid @enderror"
                       name="bio" value=""  autocomplete="bio" autofocus>{{ old('bio') ?? $user->profile->bio }}</textarea>
             @error('bio')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+
+        <!--image-->
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="profile_picture">Profile</label>
+            <input id="profile_picture" type="file" class="form-control @error('profile_picture') is-invalid @enderror"
+                   name="profile_picture" value="{{ old('profile_picture') }}"  autocomplete="profile_picture" autofocus>
+
+            @error('profile_picture')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>

@@ -4,11 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-3 p-5">
-            <img src="/assets/laravel-logo.jpg" class="img-thumbnail rounded-full" alt="...">
+            <img src="/storage/{{$user->profile->profile_picture}}" class="img-thumbnail rounded-full w-100"
+                 alt="...">
         </div>
         <div class="col-md-9 pt-5">
             <div class="d-flex align-items-end justify-content-between">
-                <h1>{{$user->username}} 
+                <h1>{{$user->username}}
                     @can('update', $user->profile)
                     <span class="fs-6 me-3">
                         <a href="/profile/{{$user->id}}/edit" class="text-decoration-none">
@@ -28,7 +29,7 @@
             </div>
             <div class="pt-3 fs-5 fw-bold">{{$user->profile->title}}</div>
             <div class="pt-3 fs-5">{{$user->profile->bio}}</div>
-            <div class="pt-3 fs-5"><a href="#">{{$user->profile->url ?? 'N/A'}}</a> </div>
+            <div class="pt-3 fs-5"><a href="#">{{$user->profile->url ?? 'N/A'}}</a></div>
         </div>
     </div>
     <div class="row pt-5">
