@@ -23,7 +23,7 @@ class ProfileController extends Controller {
             'bio' => 'required',
             'url' => 'url',
         ]);
-        $user->profile->update($data);
+        auth()->user->profile->update($data);
         return redirect("/profile/{$user->id}");
         // dd($data);
     }
