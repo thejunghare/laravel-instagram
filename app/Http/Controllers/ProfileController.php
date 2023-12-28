@@ -35,11 +35,13 @@ class ProfileController extends Controller
 
         if (request('profile_picture')) {
             $path = request('profile_picture')->store('uploads', 'public');
+            $imageArray = ['profile-picture' => $path];
         }
+
 
         auth()->user()->profile->update(array_merge(
             $data,
-            ['profile_picture' => $path]
+            $imageArray ?? []
         ));
 
         return redirect("/profile/{$user->id}");
