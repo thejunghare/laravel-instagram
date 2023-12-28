@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-3 p-5">
-            <img src="/storage/{{$user->profile->profile_picture}}" class="img-thumbnail rounded-full w-100"
+            <img src="/storage/{{$user->profile->profile_picture}}" class="img-thumbnail rounded-circle"
                  alt="...">
         </div>
         <div class="col-md-9 pt-5">
