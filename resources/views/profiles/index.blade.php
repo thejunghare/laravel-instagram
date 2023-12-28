@@ -8,7 +8,7 @@
                  alt="...">
         </div>
         <div class="col-md-9 pt-5">
-            <div class="d-flex align-items-end justify-content-between">
+            <div class="d-flex align-items-center justify-content-between">
                 <h4>{{$user->username}}
                     @can('update', $user->profile)
                     <span class="fs-6 me-3">
@@ -18,6 +18,7 @@
                     </span>
                     @endcan
                 </h4>
+                <follow-component user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-component>
                 @can('update', $user->profile)
                 <a href="/p/create" class="text-decoration-none">Add Post</a>
                 @endcan

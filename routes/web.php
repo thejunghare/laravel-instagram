@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FollowsController;
 
 /*
   |--------------------------------------------------------------------------
@@ -37,3 +38,14 @@ Route::get('/p/{post}', [PostsController::class, 'show']);
 Route::get('/profile/{user}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 // this is actually update the profile
 Route::patch('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// follow coomponent
+Route::post('follow/{user}', [FollowsController::class, 'store']);
